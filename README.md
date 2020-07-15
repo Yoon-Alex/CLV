@@ -39,7 +39,7 @@ __일반적으로 LTV의 정의.__
 - VIP, VVIP 멤버십 가입회원 -> 이미 브랜드 충성도 높을 것으로 예상됨, 제외
 ### EDA 작성 (tableau) 
 
-![image.png](attachment:image.png)
+https://github.com/Yoon-Alex/CLV/issues/1#issue-657213575
 
 - 간단한 리포트 양식을 통해 요일별 매출 추이, 가입일, 구매한 제품군 등을 확인
 - 아이 연령에 따라 주로 구매하는 제품이 다르다는 것을 확인하였음. 기저귀 사이즈, 공갈젖꼭지 등 
