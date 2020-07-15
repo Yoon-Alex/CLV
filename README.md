@@ -25,15 +25,14 @@ __일반적으로 LTV의 정의.__
 구매한 제품을 통해 할인 혜택을 이용한 리셀러, 체리피커인지. 영유아 선물용으로
 제품을 구매하기 위해 유입한 삼촌, 이모 고객 군인지 판단 필요. 
 
-+) 맘카페 및 블로그 데이터 수집
-
-![image.png](attachment:image.png)
++) 맘카페 및 블로그 데이터 수집 (cralwing_momQ.ipynb)
+![image](https://user-images.githubusercontent.com/58278809/87530497-5da55b00-c6cb-11ea-92be-d5bf6e6a9eb5.png)
 
 - 의외로 '할인' 이라는 주제의 제목보다 축하, 선물에 관련된 주제가 많이 나타남
 
 ### 이상치 제거 및 변수 전처리(가입일)
+![image](https://user-images.githubusercontent.com/58278809/87530586-7f064700-c6cb-11ea-9cb1-abc071b64703.png)
 
-![image.png](attachment:image.png)
 - 가입일 통일된 회원정보 -> test 계정으로 추측. 삭제
 - 구매빈도, 구매액 -> 3sigma 기준으로 삭제
 - VIP, VVIP 멤버십 가입회원 -> 이미 브랜드 충성도 높을 것으로 예상됨, 제외
@@ -45,8 +44,7 @@ __일반적으로 LTV의 정의.__
 - ATV(객단가)가 4만원인 것을 확인하였음.
 
 ### 간단한 CLV 공식 산출
-
-(공식)
+![image](https://user-images.githubusercontent.com/58278809/87530639-904f5380-c6cb-11ea-9873-472b8ee8c7ad.png)
 
 EDA를 통해서 아이연령, 가입일(이벤트 시행일 유무)에 따라서 구매빈도와, 구매액 모두 달라지는 것을 확인. 
 
@@ -59,16 +57,14 @@ EDA를 통해서 아이연령, 가입일(이벤트 시행일 유무)에 따라�
 ### 클러스터링
 
 위에서 산출한 두가지 변수(고객당 예상 매출, 이탈 예측 점수)를 통해 K-means Clustering을 진행.
-
-![image.png](attachment:image.png)
+![image](https://user-images.githubusercontent.com/58278809/87530713-abba5e80-c6cb-11ea-9c1d-491309158423.png)
+![image](https://user-images.githubusercontent.com/58278809/87530726-b1b03f80-c6cb-11ea-8669-8bb03066f1ca.png)
 
 - 덴드로그램과 실루엣 계수를 참고하여 4개의 그룹으로 클러스터링을 진행
 - 아래와 같은 결과 도출
 
 ### 결과
-
-![image.png](attachment:image.png)
-
+![image](https://user-images.githubusercontent.com/58278809/87530774-c391e280-c6cb-11ea-8c92-00c6da3dcc2a.png)
 * 1 cluster : 브랜드 충성도 높음, 구매 빈도, 매출액 모두 상위 -> VIP 멤버십 가입유도 전략 
 * 2 cluster : 가입일 짧음(신규 가입 多), 아이연령 낮음, 앞으로의 구매력 높음 -> 첫 아이 선물 패키징 구성(제품추천) 및 혜택 제공
 * 3 cluster : 고객정보 아이없음, 구매빈도 낮음, 주로 공갈 젖꼭지, 아기용품 등 선물용 상품 구매 -> 직접 아이를 키우는 고객이 아닌 선물용 상품 구매 회원으로 추측 
